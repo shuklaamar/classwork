@@ -1,31 +1,31 @@
 class stack{
         constructor(){
-            this.stack_array = [];
+            this.item = [];
+            this.count=0;
         }
         push(val){
-            this.stack_array.push(val);
+            this.item[this.count]=val;
+            this.count++;
         }
         pop(){
-            if(this.stack_array.length == 0 ) return 'cant pop';
-            else{
-                return stack_array.pop();
-            }
+            this.count--;
+            this.item.pop();
         }
         size(){
-            return this.stack_array.length;
+            return this.count+1;
         }
 
         isempty(){
-            return this.stack_array.length == 0;
+            return this.count == 0;
         }
         print(){
-            for(let i=this.stack_array.length-1;i>0;i--){
-                return this.stack_array[i];
-            }
+           return this.item;
         }
 }
 var stack1 = new stack();
 stack1.push(1);
-console.log(stack1.print);
+stack1.pop();
+console.log(stack1.print());
+
 
 
